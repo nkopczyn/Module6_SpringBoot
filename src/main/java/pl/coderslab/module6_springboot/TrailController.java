@@ -34,8 +34,11 @@ public class TrailController {
     @PostMapping("/add-post")
     public String addTrail(@RequestBody TrailDTO trailRequest) {
         // Pobierz punkty startowy i końcowy na podstawie przesłanych ID
-        Point start = pointService.getPointById(trailRequest.getStartId());
-        Point finish = pointService.getPointById(trailRequest.getFinishId());
+        Point start = pointService.getPointById(trailRequest.getStartPointId());
+        Point finish = pointService.getPointById(trailRequest.getFinishPointId());
+
+        // trail name add
+        String trailName = trailRequest.getTrailName();
 
         // Oblicz długość trasy na podstawie współrzędnych punktów
         double length = trailService.calculateTrailLength(start, finish);
@@ -43,14 +46,14 @@ public class TrailController {
         // Ustal kategorię na podstawie długości
         Category category = trailService.determineTrailCategory(length);
 
-        // Utwórz nowy obiekt Trail
+
         Trail trail = new Trail();
+        trail.setName(trailName);
         trail.setStart(start);
         trail.setFinish(finish);
         trail.setLength(length);
         trail.setCategory(category);
 
-        // Zapisz trasę w bazie
         trailService.addTrail(trail);
 
         return "trail added via post";

@@ -9,7 +9,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TrailDTO {
-    private Long startId;
-    private Long finishId;
+    private String trailName;
+    private Long startPointId;
+    private Long finishPointId;
 
 }

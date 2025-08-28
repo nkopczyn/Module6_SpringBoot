@@ -5,7 +5,11 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import pl.coderslab.module6_springboot.category.Category;
+import pl.coderslab.module6_springboot.mountrange.MountRange;
 import pl.coderslab.module6_springboot.point.Point;
+import pl.coderslab.module6_springboot.tag.Tag;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,5 +30,11 @@ public class Trail {
     @ManyToOne
     @Schema(description = "Kategoria trudności trasy")
     private Category category;
+
+    @ManyToOne
+    private MountRange mountRange;
+
+    @ManyToMany
+    private List<Tag> tags;
 
 }
