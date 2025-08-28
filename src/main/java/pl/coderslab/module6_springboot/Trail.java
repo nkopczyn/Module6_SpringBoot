@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import pl.coderslab.module6_springboot.category.Category;
+import pl.coderslab.module6_springboot.point.Point;
 
 @Entity
 @Getter
@@ -14,6 +15,12 @@ public class Trail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @ManyToOne
+    private Point start;
+    @ManyToOne
+    private Point finish;
+
     private double length;
 
     @ManyToOne

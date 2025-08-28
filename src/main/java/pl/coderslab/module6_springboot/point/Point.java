@@ -1,4 +1,4 @@
-package pl.coderslab.module6_springboot.category;
+package pl.coderslab.module6_springboot.point;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,10 +10,10 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Category {
-
+public class Point {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String intensity;
-
+    private double latitude;
+    private double longitude;
 }

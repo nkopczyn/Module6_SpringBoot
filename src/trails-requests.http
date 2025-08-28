@@ -1,0 +1,12 @@
+###
+
+POST http://localhost:8080/trails/add-post
+Content-Type: application/json
+
+{
+  "startId": 1,
+  "finishId": 2
+}
+
+###
+
