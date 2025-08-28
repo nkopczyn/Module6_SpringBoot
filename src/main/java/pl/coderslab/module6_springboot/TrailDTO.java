@@ -12,5 +12,6 @@ public class TrailDTO {
     private String trailName;
     private Long startPointId;
     private Long finishPointId;
+    private String mountRangeName;
 
 }

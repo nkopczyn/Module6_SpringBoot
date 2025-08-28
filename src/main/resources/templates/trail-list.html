@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang=pl xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista szlaków</title>
+</head>
+<body>
+<h1>Lista szlaków turystycznych</h1>
+
+<table>
+    <tr>
+        <th>Długość</th>
+    </tr>
+    <tr th:each="trail : ${trails}">
+        <td th:text="${trail.length}"></td>
+    </tr>
+</table>
+</body>
+</html>

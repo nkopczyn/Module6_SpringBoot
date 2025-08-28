@@ -15,9 +15,11 @@ import java.util.List;
 @Getter
 @Setter
 public class Trail {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     @ManyToOne
