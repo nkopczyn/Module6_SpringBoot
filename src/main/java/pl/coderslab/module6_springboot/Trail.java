@@ -1,11 +1,10 @@
 package pl.coderslab.module6_springboot;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import pl.coderslab.module6_springboot.category.Category;
 
 @Entity
 @Getter
@@ -16,6 +15,9 @@ public class Trail {
     private Long id;
     private String name;
     private double length;
-    private String category;
+
+    @ManyToOne
+    @Schema(description = "Kategoria trudności trasy")
+    private Category category;
 
 }

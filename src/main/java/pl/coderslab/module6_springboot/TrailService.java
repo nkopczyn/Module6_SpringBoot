@@ -16,4 +16,10 @@ public class TrailService {
     public List<Trail> getAllTrails() {
         return trailRepository.findAll();
     }
+
+    public String addTrail(Trail trail) {
+        trailRepository.save(trail);
+        return trail.getName() + "added";
+    }
+
 }
